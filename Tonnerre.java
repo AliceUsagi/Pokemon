@@ -1,73 +1,71 @@
-public class Feu extends Pokemon{
-	  private String nameAttack;
-    private int attackCanicule;
-    private int attackDanseFlamme;
+public class Tonnerre extends Pokemon{
+    private int attackEclairFou;
+    private int attackEtincelle;
 
-	public int getAttackCanicule(){
-		return this.attackCanicule;	
+	public int getAttackEclairFou(){
+		return this.attackEclairFou;	
     }
     
-    public int getAttackDanseFlamme(){
-		return this.attackDanseFlamme;	
+    public int getAttackEtincelle(){
+		return this.attackEtincelle;	
 	}
 
-	public Feu(String name,int pv, int attack) {
+	public Tonnerre(String name,int pv, int attack) {
 		super(name, pv, attack);
-        this.attackCanicule = 400; 
-        this.attackDanseFlamme = 400;
+        this.attackEclairFou = 400; 
+        this.attackEtincelle = 400;
 
 	}
 
-// attaque canicule 
+// attaque eclair fou 
 
-	public void canicule(Vent v) {
-		v.setPv(v.getPv() - this.getAttackCanicule());
+	public void eclairFou(Vent v) {
+		v.setPv(v.getPv() - this.getAttackEclairFou()/4);
 		System.out.println (this.name + " a " + this.pv + " PV et " + v.getName() + " a " + v.getPv() + " PV");
 		System.out.print (this.isKo() ? this.name + " est KO": "");
 	}
 
-	public void canicule(Feu f) {
-		f.setPv(f.getPv() - (this.getAttackCanicule()/2));
+	public void eclairFou(Feu f) {
+		f.setPv(f.getPv() - (this.getAttackEclairFou()/2));
 		System.out.println (this.name + " a " + this.pv + " PV et " + f.getName() + " a " + f.getPv() + " PV");
 		System.out.print (this.isKo() ? this.name + " est KO ": "");
 	}
 
-	public void canicule(Eau e) {
-		e.setPv(e.getPv() - (this.getAttackCanicule()/4));
+	public void eclairFou(Eau e) {
+		e.setPv(e.getPv() - this.getAttackEclairFou());
 		System.out.println (this.name + " a " + this.pv + " PV et " + e.getName() + " a " + e.getPv() + " PV");
 		System.out.print (this.isKo() ? this.name + " est KO ": "");
 	}
 
-	public void canicule(Tonnerre t) {
-		t.setPv(t.getPv() - (this.getAttackDanseFlamme()/2));
+    public void eclairFou(Tonnerre t) {
+		t.setPv(t.getPv() - this.getAttackEclairFou()/2);
 		System.out.println (this.name + " a " + this.pv + " PV et " + t.getName() + " a " + t.getPv() + " PV");
 		System.out.print (this.isKo() ? this.name + " est KO ": "");
 	}
 
-// attaque danse flamme 
-	public void danseFlamme(Vent v) {
-		v.setPv(v.getPv() - this.getAttackDanseFlamme());
+// attaque étincelle
+	public void etincelle(Vent v) {
+		v.setPv(v.getPv() - this.getAttackEtincelle()/4);
 		System.out.println (this.name + " a " + this.pv + " PV et " + v.getName() + " a " + v.getPv() + " PV");
 		System.out.print (this.isKo() ? this.name + " est KO": "");
 	}
 
-	public void danseFlamme(Feu f) {
-		f.setPv(f.getPv() - (this.getAttackDanseFlamme()/2));
+	public void etincelle(Feu f) {
+		f.setPv(f.getPv() - (this.getAttackEtincelle()/2));
 		System.out.println (this.name + " a " + this.pv + " PV et " + f.getName() + " a " + f.getPv() + " PV");
 		System.out.print (this.isKo() ? this.name + " est KO ": "");
 	}
 
-	public void danseFlamme(Eau e) {
-		e.setPv(e.getPv() - (this.getAttackDanseFlamme()/4));
+	public void etincelle(Eau e) {
+		e.setPv(e.getPv() - this.getAttackEtincelle());
 		System.out.println (this.name + " a " + this.pv + " PV et " + e.getName() + " a " + e.getPv() + " PV");
 		System.out.print (this.isKo() ? this.name + " est KO ": "");
 	}
 
-	public void danseFlamme(Tonnerre t) {
-		t.setPv(t.getPv() - (this.getAttackDanseFlamme()/2));
+    public void etincelle(Tonnerre t) {
+		t.setPv(t.getPv() - this.getAttackEclairFou()/2);
 		System.out.println (this.name + " a " + this.pv + " PV et " + t.getName() + " a " + t.getPv() + " PV");
 		System.out.print (this.isKo() ? this.name + " est KO ": "");
 	}
 
 }
-
